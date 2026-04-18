@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Music</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="logo">
+          <h1>App Music</h1>
+        </div>
+        <div>
+          <label class="upload-label" for="fileInput">
+            <span>Upload Mp3 Files</span>
+            <input
+              id="fileInput"
+              type="file"
+              multiple
+              id="fileInput"
+              accept=".mp3,audio/mpeg"
+            />
+          </label>
+        </div>
+      </header>
+      <main class = "main-layout">
+        <section class="playlist-panel panel">
+          <div class = "panel-header">
+            <h2>Playlist</h2>
+            <span id="playlistCount">0 bài hát</span>
+          </div>
+          <div id = "songlist" class = "song-list">
+            <p class = "empty-text">Chưa có bài hát nào. Hãy tải lên các file mp3 để bắt đầu.</p>
+          </div>
+        </section>
+        <section class="player-panel panel">
+          <div class = "panel-header">
+            <h2>Now Playing</h2>
+          </div>
+          <div class="cover-box">
+            <div class = "fake-cover"><img src="/Super Mario Bros 1985/Super-Mario-Bros-1985.png" alt="mario-cover"></div>
+          </div>
+          <div class="current-song-box">
+            <p class="current-song-name" id="currentSongName">
+              Chưa có bài hát nào được chọn
+            </p>
+            <p class="muted-text">Local Music Player</p>
+          </div>
+          <div class = "control-group">
+            <button id="togglePlayBtn" class="btn btn-primary">Play</button>
+            <button id="playFavoritesBtn" class="btn">Favorites</button>
+            <button id="shuffleFavoritesBtn" class="btn">Shuffle Favorites</button>
+          </div>
+          <div class = "stats-grid">
+            <div class="stat-card">
+              <span class="muted-text">Tổng bài hát:</span>
+              <strong id="totalSongs">0</strong>
+            </div>
+            <div class="stat-card">
+              <span class="muted-text">Favorite</span>
+              <strong id="totalFavorites">0</strong>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class = "bottom-player">
+        <div class = "bottom-player-info">
+          <p class="bottom-title">Player</p>
+          <p id="bottomCurrentSong" class="bottom-song-name">Chưa có bài nào được phát</p>
+        </div>
+        <audio id="audioPlayer" controls class="audio-player"></audio>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
