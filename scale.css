@@ -1,0 +1,13 @@
+@media screen and (max-width: 900px) {
+    .main-layout{
+        display:flex;
+        flex-direction:column;
+        gap:24px;
+    }
+    .bottom-player{
+        display:flex;
+        flex-direction:column;
+        gap:18px;
+    }
+    
+}
