@@ -4,6 +4,7 @@ body{
   color: var(--text);
   min-height: 100vh;
   min-width: 600px;
+
 }
 :root{
   --bg:#121212;
