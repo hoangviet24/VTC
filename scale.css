@@ -1,18 +1,9 @@
 @media screen and (max-width: 900px) {
-    body{
-        font-size:10px
+    .main-layout {
+        display: flex;
+        flex-direction: column;
     }
-    .main-layout{
-        display:flex;
-        flex-direction:column;
-        gap:24px;
-    }
-    .bottom-player{
+    .bottom-player {
         display: block !important;
-        width: 100%;
-    }
-    .bottom-player-info{
-        margin-bottom:15px;
-        width:100%;
     }
 }
