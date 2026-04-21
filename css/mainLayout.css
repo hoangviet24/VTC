@@ -105,3 +105,108 @@
   flex-direction:column;
   gap:18px;
 }
+
+.song-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px
+}
+
+.song-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: background 0.3s ease;
+}
+
+.song-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Cụm thông tin bên trái: Ảnh + Tên */
+.song-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Ảnh vuông tượng trưng */
+.song-thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #333; /* Màu nền dự phòng */
+}
+
+.song-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.song-name {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--text);
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Nút play nhỏ bên phải */
+.btn-play-song {
+  background: var(--green);
+  color: #000;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-play-song:hover {
+  transform: scale(1.05);
+}
+
+.song-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-favorite, .btn-remove {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-favorite.active {
+    color: #ff4444; /* Màu đỏ khi đã thích */
+    transform: scale(1.2);
+}
+
+.btn-remove:hover {
+    color: #ff4444;
+}
+
+.btn-favorite:hover {
+    color: var(--text);
+}
+
+/* Chỉnh lại song-info để dàn hàng ngang tốt hơn */
+.song-info {
+    display: grid;
+    grid-template-columns: 50px 1fr auto;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
