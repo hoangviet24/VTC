@@ -16,10 +16,25 @@ let currentPlayingSong = null;
 let playList = [];
 let isShowingFavorites = false;
 const playFavoritesBtn = document.getElementById('playFavoritesBtn');
+const shuffleFavoritesBtn = document.getElementById('shuffleFavoritesBtn');
 
+shuffleFavoritesBtn.addEventListener('click', () => {
+    // Lọc ra danh sách các bài đã thích
+    const favSongs = playList.filter(s => s.isFavorite);
+    
+    if (favSongs.length === 0) {
+        alert("Bạn chưa có bài hát yêu thích nào để Shuffle!");
+        return;
+    }
+
+    // Chọn ngẫu nhiên một bài trong danh sách yêu thích
+    const randomIndex = Math.floor(Math.random() * favSongs.length);
+    const randomSong = favSongs[randomIndex];
+
+    // Phát bài đó
+    playSong(randomSong);
+});
 playFavoritesBtn.addEventListener('click', () => {
-    isShowingFavorites = !isShowingFavorites; // Đảo trạng thái
-
     if (isShowingFavorites) {
         playFavoritesBtn.textContent = 'Show All';
         playFavoritesBtn.classList.add('btn-primary'); // Làm nổi bật nút khi đang lọc
@@ -54,8 +69,7 @@ fileInput.addEventListener('change', function (e) {
 });
 
 toggleBtn.addEventListener('click', function () {
-    if (!audioPlayer.src) return;
-    if (playList.length === 0) return;
+    if (!audioPlayer.src || playList.length === 0) return;
     if (audioPlayer.paused) {
         audioPlayer.play();
         toggleBtn.textContent = 'Pause';
@@ -63,6 +77,7 @@ toggleBtn.addEventListener('click', function () {
         audioPlayer.pause();
         toggleBtn.textContent = 'Play';
     }
+    updateListButtons();
 });
 
 function addSongToUI(song) {
