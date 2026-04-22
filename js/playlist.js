@@ -1,6 +1,6 @@
 // playlist.js — Quản lý danh sách phát (render, thêm, xóa, favorite)
 
-import { songList, playListCounter, audioPlayer, currentSongName, fileInput } from './dom.js';
+import { songList, playListCounter, audioPlayer, currentSongName, fileInput, coverImg } from './dom.js';
 import {
     playList, currentPlayingSong, isShowingFavorites,
     setPlayList, setCurrentPlayingSong, setIsShowingFavorites
@@ -70,6 +70,7 @@ export function addSongToUI(song) {
         if (currentPlayingSong && currentPlayingSong.url === song.url) {
             audioPlayer.pause();
             audioPlayer.src = '';
+            coverImg.src = '';
             setCurrentPlayingSong(null);
 
             const mainFooter = document.getElementById('mainFooter');
