@@ -1,6 +1,6 @@
 // player.js — Logic phát nhạc, chuyển bài, lặp lại
 
-import { audioPlayer, toggleBtn, currentSongName, bottomCurrentSong } from './dom.js';
+import { audioPlayer, toggleBtn, currentSongName, bottomCurrentSong,coverImg } from './dom.js';
 import {
     playList, currentPlayingSong, isShowingFavorites, repeatMode,
     setCurrentPlayingSong
@@ -16,6 +16,7 @@ export function playSong(song) {
         setCurrentPlayingSong(song);
         audioPlayer.src = song.url;
         audioPlayer.play();
+        coverImg.src = song.cover;
 
         const songNameEl = document.getElementById('bottomCurrentSong');
         const songNameCloneEl = document.getElementById('bottomCurrentSongClone');
