@@ -2,7 +2,6 @@
   display:grid;
   grid-template-columns:1.6fr 0.9fr;
   gap:24px;
-  margin-bottom:24px;
 }
 .panel {
   background: var(--panel);

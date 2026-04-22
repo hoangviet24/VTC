@@ -6,4 +6,7 @@
     .bottom-player {
         display: block !important;
     }
+    .app{
+        padding-bottom:240px
+    }
 }

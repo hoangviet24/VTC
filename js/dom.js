@@ -1,0 +1,16 @@
+export const fileInput = document.getElementById('fileInput');
+export const songList = document.getElementById('songlist');
+export const audioPlayer = document.getElementById('audioPlayer');
+export const playListCounter = document.getElementById('playListCount');
+export const totalSong = document.getElementById('totalSongs');
+export const currentSongName = document.getElementById('currentSongName');
+export const bottomCurrentSong = document.getElementById('bottomCurrentSong');
+export const toggleBtn = document.getElementById('togglePlayBtn');
+export const coverImg = document.querySelector('.fake-cover img');
+export const emptyText = document.querySelector('.empty-text');
+export const mainBar = document.querySelector('.progress-bar');
+export const currentLine = document.querySelector('.current-line');
+export const bufferedLine = document.querySelector('.buffered-line');
+export const repeatBtn = document.getElementById('repeatBtn');
+export const playFavoritesBtn = document.getElementById('playFavoritesBtn');
+export const shuffleFavoritesBtn = document.getElementById('shuffleFavoritesBtn');

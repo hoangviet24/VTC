@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="/css/mainLayout.css" />
     <link rel="stylesheet" href="/css/scale.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="app">
@@ -74,16 +81,48 @@
           </div>
         </section>
       </main>
-      <footer class="bottom-player">
+      <footer class="bottom-player" id="mainFooter" style="display: none">
         <div class="bottom-player-info">
-          <p class="bottom-title">Player</p>
-          <p id="bottomCurrentSong" class="bottom-song-name">
-            Chưa có bài nào được phát
-          </p>
+          <div id="miniCoverContainer" class="mini-cover">
+            <img id="bottomCover" class="player-mini-img" src="" alt="cover" />
+          </div>
         </div>
-        <audio id="audioPlayer" controls class="audio-player"></audio>
+
+        <div class="custom-player">
+          <div class="song-info-top">
+            <div class="marquee-wrapper">
+              <p id="bottomCurrentSong" class="bottom-song-name">
+                Chưa có bài nào được phát
+              </p>
+              <p id="bottomCurrentSongClone" class="bottom-song-name clone">
+                Chưa có bài nào được phát
+              </p>
+            </div>
+          </div>
+
+          <div class="progress-area">
+            <div class="progress-bar">
+              <div class="buffered-line"></div>
+              <div class="current-line"></div>
+            </div>
+            <div class="time-display">
+              <span id="currentTime">0:00</span>
+              <span id="duration">0:00</span>
+            </div>
+          </div>
+
+          <div class="main-controls">
+            <button id="prevBtn" class="btn-nav" title="Previous">⏮</button>
+            <button id="mainPlayBtn" class="btn-play-main">▶</button>
+            <button id="nextBtn" class="btn-nav" title="Next">⏭</button>
+            <button id="repeatBtn" class="btn-nav" title="Repeat">
+              <i class="fa-solid fa-repeat"></i>
+            </button>
+          </div>
+        </div>
+        <audio id="audioPlayer" hidden class="audio-player"></audio>
       </footer>
     </div>
-    <script src="handlefile.js" type="module"></script>
+    <script src="js/handlefile.js" type="module" defer></script>
   </body>
 </html>
