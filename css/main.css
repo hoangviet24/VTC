@@ -2,7 +2,7 @@ body{
   font-family: sans-serif, Arial, Helvetica;
   background-color: var(--bg);
   color: var(--text);
-  min-height: 100vh;
+  min-height: 12  0vh;
   min-width: 600px;
 
 }
@@ -24,6 +24,7 @@ body{
   padding: 20px;
   background-color: var(--panel);
   font-size: 24px;
+  padding-bottom: 150px;
 }
 button,input{
   font:inherit;
